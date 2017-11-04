@@ -1,0 +1,10 @@
+<%= link_to  "home", :root %>
+<%= link_to "back", :back %>
+<h1><%= @restaurant.name %></h1>
+
+<% @dishes.each do |dish| %>
+  <p> <%= link_to  dish.name , restaurant_dish_path(dish) %> </p>
+
+  <p><%= dish.price %> </p>
+  
+<% end %>
