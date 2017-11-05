@@ -1,8 +1,12 @@
 <%= link_to  "home", :root %>
 
-<%= link_to "back", :back %>
+<%= link_to "back", @restaurant %>
 
 <h1><%= @dish.name %></h1>
 
 
 <h2> <%= @dish.price %> </h2>
+
+<%= form_for(@selected_dish, url: restaurant_dish_selected_dishes_path(@restaurant.id, @dish.id) ) do |f| %>
+  <%= f.submit "+" %>
+<% end  %>

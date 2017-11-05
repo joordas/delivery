@@ -1,5 +1,15 @@
 <h1>Restaurants</h1>
+<% if !current_user %>
+  <%= link_to  "Sign in", new_user_session_path %>
+<% end %>
 
 <% @restaurants.each do |restaurant| %>
   <h2> <%= link_to  restaurant.name , restaurant_path(restaurant) %> </h2>
 <% end%>
+
+<h2> Your Cart: </h2>
+
+<% @cart.each do |selected| %>
+  <%= selected.dish.name %>
+<% end %>
+

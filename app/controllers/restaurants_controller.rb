@@ -1,6 +1,8 @@
 class RestaurantsController < ApplicationController
   def index
     @restaurants = Restaurant.all
+    @cart = SelectedDish.where(user_id: 1)
+    
   end
 
   def show

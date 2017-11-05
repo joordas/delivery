@@ -1,9 +1,9 @@
 <%= link_to  "home", :root %>
-<%= link_to "back", :back %>
+<%= link_to "back", restaurants_path %>
 <h1><%= @restaurant.name %></h1>
 
 <% @dishes.each do |dish| %>
-  <p> <%= link_to  dish.name , restaurant_dish_path(dish) %> </p>
+  <p> <%= link_to  dish.name , restaurant_dish_path(dish.restaurant, dish.id) %> </p>
 
   <p><%= dish.price %> </p>
   
